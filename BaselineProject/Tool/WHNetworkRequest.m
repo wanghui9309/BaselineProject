@@ -38,12 +38,9 @@ SHARE_INSTANCE_M(NetworkRequest, WHNetworkRequest)
     if (self)
     {
         _sessionManager = [AFHTTPSessionManager manager];
-        //请求头
-        _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
-        _sessionManager.requestSerializer.timeoutInterval = 15.0f;
         //响应体
         _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        _sessionManager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"image/png", @"image/jpeg", nil];
+        _sessionManager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json", @"application/javascript", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"image/png", @"image/jpeg", nil];
         
         _operationTask = [NSMutableSet set];
         
@@ -136,6 +133,20 @@ SHARE_INSTANCE_M(NetworkRequest, WHNetworkRequest)
             });
         }
     };
+    
+    //请求头
+    switch (self.requestType)
+    {
+        case RequestSerializerType_Http:
+            _sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+            break;
+            
+        default:
+            _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+            break;
+    }
+    // 超时时间
+    _sessionManager.requestSerializer.timeoutInterval = 15.0f;
     
     NSURLSessionTask *task = nil;
     switch (requestType)

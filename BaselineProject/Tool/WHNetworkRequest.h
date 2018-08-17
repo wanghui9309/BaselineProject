@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, RequestSerializerType)
+{
+    RequestSerializerType_Json = 0,
+    RequestSerializerType_Http
+};
+
 @interface WHNetworkRequest : NSObject
 
+/** 请求类型 默认：Json */
+@property (nonatomic, assign) RequestSerializerType requestType;
+
 SHARE_INSTANCE_H(NetworkRequest)
+
 /**
  POST FormData 请求
  
