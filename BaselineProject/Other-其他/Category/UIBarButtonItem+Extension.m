@@ -101,7 +101,7 @@
  @param target 调用者
  @param action 调用者的方法
  */
-+ (UIBarButtonItem *)setBarButtonItemWithTitle:(NSString *)title titleColor:(UIColor *)titleColor fontSize:(CGFloat)fontSize addTarget:(id)target action:(SEL)action
++ (UIBarButtonItem *)barButtonItemWithTitle:(NSString *)title titleColor:(UIColor *)titleColor fontSize:(CGFloat)fontSize addTarget:(id)target action:(SEL)action
 {
     UIButton *btn = [UIButton buttonWithType: UIButtonTypeCustom];
     
