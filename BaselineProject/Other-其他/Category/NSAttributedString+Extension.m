@@ -31,14 +31,13 @@
 }
 
 /**
- 弹框文本
+ 文字添加行间距
  
- @param message 升级内容文本
- @return 新文本
+ @param text 文字
  */
-+ (NSAttributedString *)alertControllerWithMessage:(NSString *)message
++ (NSAttributedString *)alertControllerWithText:(NSString *)text
 {
-    if (message.length == 0)
+    if (text.length == 0)
     {
         return nil;
     }
@@ -51,14 +50,13 @@
                                   NSFontAttributeName : [UIFont systemFontOfSize:14.0f],
                                   NSParagraphStyleAttributeName : paragraphStyle
                                   };
-    return [[NSMutableAttributedString alloc] initWithString:message attributes:attributes];
+    return [[NSMutableAttributedString alloc] initWithString:text attributes:attributes];
 }
 
 /**
- 文本删除线
+ 文字删除线
  
- @param text 文本
- @return 新文本
+ @param text 文字
  */
 + (NSAttributedString *)textStrikethrough:(NSString *)text
 {
@@ -70,9 +68,9 @@
 }
 
 /**
- 文本下划线
+ 文字下划线
  
- @param text 文本
+ @param text 文字
  */
 + (NSAttributedString *)textUnderline:(NSString *)text
 {

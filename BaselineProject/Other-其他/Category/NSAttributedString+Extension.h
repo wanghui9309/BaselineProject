@@ -21,25 +21,23 @@
 + (NSAttributedString *)attributedWithText:(NSString *)text textColor:(UIColor *)color textFont:(UIFont *)font;
 
 /**
- 弹框文本
+ 文字添加行间距
  
- @param message 升级内容文本
- @return 新文本
+ @param text 文字
  */
-+ (NSAttributedString *)alertControllerWithMessage:(NSString *)message;
++ (NSAttributedString *)alertControllerWithText:(NSString *)text;
 
 /**
- 文本删除线
+ 文字删除线
  
- @param text 文本
- @return 新文本
+ @param text 文字
  */
 + (NSAttributedString *)textStrikethrough:(NSString *)text;
 
 /**
- 文本下划线
+ 文字下划线
  
- @param text 文本
+ @param text 文字
  */
 + (NSAttributedString *)textUnderline:(NSString *)text;
 
