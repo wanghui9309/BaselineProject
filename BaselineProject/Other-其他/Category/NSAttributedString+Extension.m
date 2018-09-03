@@ -19,6 +19,8 @@
  */
 + (NSAttributedString *)attributedWithText:(NSString *)text textColor:(UIColor *)color textFont:(UIFont *)font
 {
+    if (text.length == 0) return nil;
+    
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     paragraphStyle.alignment = NSTextAlignmentCenter;
@@ -37,10 +39,8 @@
  */
 + (NSAttributedString *)alertControllerWithText:(NSString *)text
 {
-    if (text.length == 0)
-    {
-        return nil;
-    }
+    if (text.length == 0) return nil;
+    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     paragraphStyle.alignment = NSTextAlignmentLeft;
@@ -60,6 +60,8 @@
  */
 + (NSAttributedString *)textStrikethrough:(NSString *)text
 {
+    if (text.length == 0) return nil;
+    
     // 中间划线
     NSDictionary *attribtDic = @{
                                  NSStrikethroughStyleAttributeName : [NSNumber numberWithInteger:NSUnderlineStyleSingle]
@@ -74,6 +76,8 @@
  */
 + (NSAttributedString *)textUnderline:(NSString *)text
 {
+    if (text.length == 0) return nil;
+    
     // 下划线
     NSDictionary *attribtDic = @{
                                  NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)
