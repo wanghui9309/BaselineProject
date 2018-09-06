@@ -71,7 +71,6 @@
  绘制虚线 图片
  
  @param size 图片大小
- @return 虚线图片
  */
 + (UIImage *)drawLineBySize:(CGSize)size;
 

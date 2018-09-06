@@ -189,10 +189,10 @@
 		7B818D612126B2B300107189 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				7B818DB02126CAE000107189 /* NSDate+Extension.h */,
-				7B818DB12126CAE000107189 /* NSDate+Extension.m */,
 				7B818D622126B2CD00107189 /* UIWindow+Extension.h */,
 				7B818D632126B2CD00107189 /* UIWindow+Extension.m */,
+				7B818DB02126CAE000107189 /* NSDate+Extension.h */,
+				7B818DB12126CAE000107189 /* NSDate+Extension.m */,
 				7B818D732126BCBF00107189 /* UIBarButtonItem+Extension.h */,
 				7B818D742126BCBF00107189 /* UIBarButtonItem+Extension.m */,
 				7B818D762126BDA400107189 /* UIImage+Extension.h */,
