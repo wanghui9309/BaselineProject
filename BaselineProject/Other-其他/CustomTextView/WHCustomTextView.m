@@ -49,7 +49,13 @@
 - (void)initUI
 {
     // 背景颜色
-    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.backgroundColor = [UIColor whiteColor];
+    // 边框
+    self.layer.borderWidth = 0.5f;
+    // 边框颜色
+    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    // 圆角
+    self.layer.cornerRadius = 3.0f;
     // 初始化font
     self.font = [UIFont systemFontOfSize:14.0f];
     // 输入视图
@@ -70,6 +76,7 @@
         UITextView *textView = [[UITextView alloc] init];
         textView.translatesAutoresizingMaskIntoConstraints = NO;
         textView.backgroundColor = [UIColor clearColor];
+        textView.textColor = [UIColor darkGrayColor];
         textView.font = self.font;
         textView.delegate = self;
         [self addSubview:textView];
