@@ -9,11 +9,19 @@
 #import <UIKit/UIKit.h>
 
 IB_DESIGNABLE
-@interface WHCustomTextView : UITextView
+@interface WHCustomTextView : UIView
 
-/** 文字 */
-@property(nonatomic, strong) IBInspectable NSString *placeholderText;
-/** 文字颜色 */
-@property(nonatomic, strong) IBInspectable UIColor *placeholderColor;
+/** 占位文字 */
+@property (nonatomic, strong) IBInspectable NSString *placeholderText;
+/** 占位文字颜色 */
+@property (nonatomic, strong) IBInspectable UIColor *placeholderColor;
+/** 最大文字长度，默认：100 */
+@property (nonatomic, assign) IBInspectable NSInteger maxLength;
+/** 输入文本 */
+@property (nonatomic, strong) IBInspectable NSString *text;
+/** 富文本 */
+@property (nonatomic, strong) IBInspectable NSAttributedString *attributedText;
+/** 文字font, 默认：14 */
+@property (nonatomic, strong) IBInspectable UIFont *font;
 
 @end
