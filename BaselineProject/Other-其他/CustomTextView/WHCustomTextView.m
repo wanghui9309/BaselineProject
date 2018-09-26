@@ -43,18 +43,11 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:UITextViewTextDidChangeNotification];
-}
-
 /**
  初始化界面
  */
 - (void)initUI
 {
-    // 通知:监听文字的改变
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:nil];
     // 背景颜色
     self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     // 初始化font
@@ -147,14 +140,19 @@
     return _surplusLabel;
 }
 
-#pragma mark -监听文字改变
-- (void)textDidChange
+#pragma marl - UITextViewDelegate
+- (void)textViewDidChange:(UITextView *)textView
 {
-    self.placeholderLabel.hidden = self.textView.hasText;
-    self.surplusLabel.text = [NSString stringWithFormat:@"%lu/%ld", (unsigned long)self.textView.text.length, (long)self.maxLength];
+    _text = textView.text;
+    self.placeholderLabel.hidden = textView.hasText;
+    self.surplusLabel.text = [NSString stringWithFormat:@"%lu/%ld", (unsigned long)textView.text.length, (long)self.maxLength];
+    
+    if ([self.delegate respondsToSelector:@selector(textViewDidChange:)])
+    {
+        [self.delegate textViewDidChange:self];
+    }
 }
 
-#pragma marl - UITextViewDelegate
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     return (textView.text.length + text.length) <= self.maxLength;
@@ -188,7 +186,7 @@
     // 文本赋值
     self.textView.text = text;
     
-    [self textDidChange];
+    [self textViewDidChange:self.textView];
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText
@@ -197,7 +195,7 @@
     // 富文本赋值
     self.textView.attributedText = attributedText;
     
-    [self textDidChange];
+    [self textViewDidChange:self.textView];
 }
 
 - (void)setFont:(UIFont *)font
@@ -207,6 +205,11 @@
     self.textView.font = font;
     self.placeholderLabel.font = font;
     self.surplusLabel.font = font;
+}
+
+- (void)setDelegate:(id<JYEBCustomTextViewDelegate>)delegate
+{
+    _delegate = delegate;
 }
 
 @end

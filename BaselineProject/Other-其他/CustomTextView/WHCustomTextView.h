@@ -8,9 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class WHCustomTextView;
+
+@protocol JYEBCustomTextViewDelegate <NSObject>
+
+@optional
+/**
+ 文字完成改变
+ */
+- (void)textViewDidChange:(WHCustomTextView *)textView;
+
+@end
+
 IB_DESIGNABLE
 @interface WHCustomTextView : UIView
 
+@property (nonatomic, weak) IBInspectable id<JYEBCustomTextViewDelegate> delegate;
 /** 占位文字 */
 @property (nonatomic, strong) IBInspectable NSString *placeholderText;
 /** 占位文字颜色 */
