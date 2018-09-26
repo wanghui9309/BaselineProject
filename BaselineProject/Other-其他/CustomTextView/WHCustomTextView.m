@@ -157,7 +157,7 @@
 #pragma marl - UITextViewDelegate
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    return textView.text.length < self.maxLength;
+    return (textView.text.length + text.length) <= self.maxLength;
 }
 
 #pragma mark - Setter
