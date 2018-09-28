@@ -49,13 +49,7 @@
 - (void)initUI
 {
     // 背景颜色
-    self.backgroundColor = [UIColor whiteColor];
-    // 边框
-    self.layer.borderWidth = 0.5f;
-    // 边框颜色
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    // 圆角
-    self.layer.cornerRadius = 3.0f;
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     // 初始化font
     self.font = [UIFont systemFontOfSize:14.0f];
     // 输入视图
@@ -83,7 +77,7 @@
         
         NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
         top.active = YES;
-        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0];
+        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:5];
         leading.active = YES;
         NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0];
         trailing.active = YES;
@@ -112,9 +106,9 @@
         
         NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:7.0];
         top.active = YES;
-        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:4.0];
+        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:10.0];
         leading.active = YES;
-        NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationLessThanOrEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-4.0];
+        NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationLessThanOrEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-10.0];
         trailing.active = YES;
         
         _placeholderLabel = lab;
@@ -136,9 +130,9 @@
         lab.text = @"0/100";
         [self addSubview:lab];
         
-        NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-5.0];
+        NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-10.0];
         trailing.active = YES;
-        NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-5.0];
+        NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:lab attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-10.0];
         bottom.active = YES;
         
         _surplusLabel = lab;
