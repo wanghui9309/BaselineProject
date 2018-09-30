@@ -112,8 +112,7 @@
 - (NSString *)getNumberStr
 {
     NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-    NSCharacterSet *specCharacterSet = [characterSet invertedSet];
-    NSArray *strArr = [self componentsSeparatedByCharactersInSet:specCharacterSet];
+    NSArray *strArr = [self componentsSeparatedByCharactersInSet:characterSet.invertedSet];
     return [strArr componentsJoinedByString:@""];
 }
 
