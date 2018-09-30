@@ -34,11 +34,18 @@
 + (NSString *)interceptTimeStampFromStr:(NSString *)string;
 
 /**
- 是否是手机号码
+ 获取字符串中数字
  
- @param mobileNumbel 手机号码
- @return yes:是，no:不是
+ @return 数字字符串
  */
-+ (BOOL)isMobile:(NSString *)mobileNumbel;
+- (NSString *)getNumberStr;
+
+/**
+ 验证码手机号
+ 
+ @param mobileNum 手机号
+ @return YES 通过 NO 不通过
+ */
++ (BOOL)validateContactNumber:(NSString *)mobileNum;
 
 @end
