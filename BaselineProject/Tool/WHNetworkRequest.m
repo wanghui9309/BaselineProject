@@ -1,6 +1,5 @@
 //
 //  WHNetworkRequest.m
-//  育龟答疑
 //
 //  Created by WangHui on 2016/12/12.
 //  Copyright © 2016年 wanghui. All rights reserved.
