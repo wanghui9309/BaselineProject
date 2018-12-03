@@ -19,8 +19,8 @@
  */
 + (instancetype)imageWithOriginalName:(NSString *)imageName
 {
-    UIImage *image = [UIImage imageNamed: imageName];
-    return [image imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+    UIImage *image = [UIImage imageNamed:imageName];
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 /**
@@ -30,8 +30,8 @@
  */
 + (UIImage *)resizingImageWithImageName:(NSString *)imageName
 {
-    UIImage *image = [UIImage imageNamed: imageName];
-    image = [image resizableImageWithCapInsets: UIEdgeInsetsMake(image.size.height * 0.7, image.size.width * 0.5, image.size.height * 0.3 - 1,  image.size.width * 0.5 - 1)];
+    UIImage *image = [UIImage imageNamed:imageName];
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.height * 0.7, image.size.width * 0.5, image.size.height * 0.3 - 1,  image.size.width * 0.5 - 1)];
     
     return image;
 }
@@ -82,20 +82,20 @@
     UIGraphicsBeginImageContextWithOptions(imageSize, NO, YES);
     
     // 2、绘制一个大圆
-    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(0, 0, imageSize.width, imageSize.height)];
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
     
     [color set];
     // 3、填充
     [path fill];
     
     // 4、设置裁剪路径
-    path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(borderW, borderW, image.size.width, image.size.height)];
+    path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(borderW, borderW, image.size.width, image.size.height)];
     
     // 5、裁剪
     [path addClip];
     
     // 6、把圆绘制到上下文中
-    [image drawInRect: CGRectMake(borderW, borderW, image.size.width, image.size.height)];
+    [image drawInRect:CGRectMake(borderW, borderW, image.size.width, image.size.height)];
     
     // 7、获取新的图片
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -119,13 +119,13 @@
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0);
     
     // 添加路径
-    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(0, 0, self.size.width, self.size.height)];
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, self.size.width, self.size.height)];
     
     // 剪裁路径
     [path addClip];
     
     // 绘图
-    [self drawAtPoint: CGPointZero];
+    [self drawAtPoint:CGPointZero];
     
     // 新图
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -147,13 +147,13 @@
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0);
     
     // 添加路径
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, self.size.width, self.size.height) cornerRadius: cornerRadius];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.size.width, self.size.height) cornerRadius:cornerRadius];
     
     // 剪裁路径
     [path addClip];
     
     // 绘图
-    [self drawAtPoint: CGPointZero];
+    [self drawAtPoint:CGPointZero];
     
     // 新图
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();

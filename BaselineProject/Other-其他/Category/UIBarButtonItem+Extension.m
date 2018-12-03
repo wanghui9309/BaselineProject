@@ -103,16 +103,16 @@
  */
 + (UIBarButtonItem *)barButtonItemWithTitle:(NSString *)title titleColor:(UIColor *)titleColor fontSize:(CGFloat)fontSize addTarget:(id)target action:(SEL)action
 {
-    UIButton *btn = [UIButton buttonWithType: UIButtonTypeCustom];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    [btn setTitle: title forState: UIControlStateNormal];
-    btn.titleLabel.font = [UIFont systemFontOfSize: fontSize];
-    [btn setTitleColor: titleColor forState: UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+    [btn setTitleColor:titleColor forState:UIControlStateNormal];
     [btn sizeToFit];
     
-    [btn addTarget: target action: action forControlEvents: UIControlEventTouchUpInside];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
-    return [[UIBarButtonItem alloc] initWithCustomView: btn];
+    return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
 @end

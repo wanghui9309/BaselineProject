@@ -66,7 +66,7 @@ SHARE_INSTANCE_M(NetworkRequest, WHNetworkRequest)
                        success:(void (^)(id responseObject))success
                        failure:(void (^)(NSError *error))failure
 {
-    [self requestWithNetworkType: requestType withUrl: urlStr photos: nil withParameters: parameters success: success failure: failure];
+    [self requestWithNetworkType:requestType withUrl:urlStr photos:nil withParameters:parameters success:success failure:failure];
 }
 
 /**
@@ -183,7 +183,7 @@ SHARE_INSTANCE_M(NetworkRequest, WHNetworkRequest)
                         NSData *imageData = UIImageJPEGRepresentation(obj, 0.7);
                         
                         
-                        [formData appendPartWithFileData:imageData name: @"file[]" fileName: fileName mimeType:@"image/png"];
+                        [formData appendPartWithFileData:imageData name:@"file[]" fileName: fileName mimeType:@"image/png"];
                     }
                 }];
                 
@@ -220,7 +220,7 @@ SHARE_INSTANCE_M(NetworkRequest, WHNetworkRequest)
         if (failure) failure(error.localizedDescription);
     };
     
-    [self requestWithNetworkType:NetworkRequestType_FormData withUrl:urlStr photos: photos withParameters:parameters success:successBlock failure:failureBlock];
+    [self requestWithNetworkType:NetworkRequestType_FormData withUrl:urlStr photos:photos withParameters:parameters success:successBlock failure:failureBlock];
 }
 
 /**
@@ -297,7 +297,7 @@ SHARE_INSTANCE_M(NetworkRequest, WHNetworkRequest)
         if (failure) failure(error.localizedDescription);
     };
     
-    [self requestWithNetworkType: NetworkRequestType_POST withUrl:urlStr withParameters:parameters success:successBlock failure:failureBlock];
+    [self requestWithNetworkType:NetworkRequestType_POST withUrl:urlStr withParameters:parameters success:successBlock failure:failureBlock];
 }
 
 #pragma mark - Notification

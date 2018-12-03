@@ -71,9 +71,9 @@
     NSDate *today = [nowDate dateByAddingTimeInterval:interval];
     
     // 昨天当前时间，包括 时 分 秒
-    NSDate *yesterday = [today dateByAddingTimeInterval: -secondsPerDay];
+    NSDate *yesterday = [today dateByAddingTimeInterval:-secondsPerDay];
     // 前天当前时间，包括 时 分 秒
-    NSDate *beforeOfYesterday = [yesterday dateByAddingTimeInterval: -secondsPerDay];
+    NSDate *beforeOfYesterday = [yesterday dateByAddingTimeInterval:-secondsPerDay];
     
     // 今天
     NSString *todayString = [[today description] substringToIndex:10];

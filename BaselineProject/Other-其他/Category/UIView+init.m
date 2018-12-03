@@ -16,7 +16,7 @@
  */
 + (instancetype)wt_viewFromXib
 {
-    return [[NSBundle mainBundle] loadNibNamed: NSStringFromClass(self) owner: nil options: nil].firstObject;
+    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
 }
 
 /**
@@ -29,7 +29,7 @@
  */
 + (CAShapeLayer *)rectCornerWithRect:(CGRect)bounds byRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii
 {
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect: bounds      byRoundingCorners: corners cornerRadii: cornerRadii];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:corners cornerRadii:cornerRadii];
     
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     

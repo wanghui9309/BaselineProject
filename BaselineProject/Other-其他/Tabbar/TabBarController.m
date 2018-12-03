@@ -53,7 +53,7 @@
 //    vc.edgesForExtendedLayout = UIRectEdgeNone;
     
     NavigationController *nav = [[NavigationController alloc] initWithRootViewController:vc];
-    [self addChildViewController: nav];
+    [self addChildViewController:nav];
 }
 
 - (void)dealloc
