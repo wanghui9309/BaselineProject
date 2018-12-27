@@ -91,8 +91,8 @@
 }
 
 /**
- iOS 7 以后远程推送触发，不管在前台还是后台
- 此方法需要配置后台模式并且在推送负载中必须有 "content-available" : 1
+ iOS 7 以后远程推送触发, 不管在前台还是后台, 远程推送系统默认按格式显示
+ 此方法需要配置后台模式并且在推送负载中必须有 "content-available" : 1 否则不会触发(默认：静默模式)
 */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
