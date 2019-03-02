@@ -25,7 +25,14 @@
  
  @param text 文字
  */
-+ (NSAttributedString *)alertControllerWithText:(NSString *)text;
++ (NSAttributedString *)addLineSpaceWithText:(NSString *)text;
+
+/**
+ 文本添加红色的“＊”号标记, 先设置文本颜色
+ 
+ @param text 文本
+ */
++ (NSAttributedString *)addRedStarWithText:(NSString *)text;
 
 /**
  文字删除线
