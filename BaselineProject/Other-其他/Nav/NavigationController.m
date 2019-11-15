@@ -19,12 +19,9 @@
 + (void)load
 {
     UINavigationBar *navBar = nil;
-    if (@available(iOS 9.0, *))
-    {
+    if (@available(iOS 9.0, *)) {
         navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[self class]]];
-    }
-    else
-    {
+    } else {
         navBar = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
     }
     
@@ -33,11 +30,11 @@
      navBar.translucent = NO;
      */
     // 当设置不透明的图片，效果是如上面的代码，会导致View位移，在控制器里面使用 extendedLayoutIncludesOpaqueBars = YES就行了
-    [navBar setBackgroundImage:[UIImage imageWithColor:UIColor.grayColor] forBarMetrics:UIBarMetricsDefault];
+    [navBar setBackgroundImage:[UIImage imageWithColor:UIColor.whiteColor] forBarMetrics:UIBarMetricsDefault];
     
     //移除NavBar黑线
-    navBar.shadowImage = [[UIImage alloc] init];
-    NSDictionary *textAttr = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+//    navBar.shadowImage = [[UIImage alloc] init];
+    NSDictionary *textAttr = @{NSForegroundColorAttributeName : [UIColor blackColor]};
     [navBar setTitleTextAttributes:textAttr];
 }
 
@@ -64,16 +61,11 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    //view 不向四周延展，原点从（导航栏）左下角开始算
-//    viewController.edgesForExtendedLayout = UIRectEdgeNone;
-    //当NavBar使用了不透明图片时，视图是否延伸至NavBar所在区域，默认值时NO
-//    viewController.extendedLayoutIncludesOpaqueBars = YES;
-    
     // 非根控制器显示Nav
     if (self.childViewControllers.count >= 1)
     {
         viewController.hidesBottomBarWhenPushed = YES;
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"nav_back_normal"] highImage:nil target:self action: @selector(back)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"nav_back_black"] highImage:nil target:self action: @selector(back)];
     }
     
     [super pushViewController:viewController animated:animated];
@@ -93,6 +85,11 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
+    CGPoint point = [touch locationInView:self.view];
+    if (point.x > 30) {
+        return NO;
+    }
+    
     return self.childViewControllers.count > 1;
 }
 
