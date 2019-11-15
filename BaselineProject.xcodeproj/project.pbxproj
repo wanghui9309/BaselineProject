@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,7 +33,6 @@
 		7B818DAC2126C88700107189 /* HMPhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818DA22126C88700107189 /* HMPhotoViewerController.m */; };
 		7B818DAD2126C88700107189 /* HMPhotoBrowserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818DA32126C88700107189 /* HMPhotoBrowserPhotos.m */; };
 		7B818DAE2126C88700107189 /* HMPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818DA42126C88700107189 /* HMPhotoProgressView.m */; };
-		7B818DAF2126C88700107189 /* HMPhotoBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818DA92126C88700107189 /* HMPhotoBrowserAnimator.m */; };
 		7B818DB22126CAE000107189 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818DB12126CAE000107189 /* NSDate+Extension.m */; };
 		7B929261218945CF0087B9E8 /* WHCollectionFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B929260218945CF0087B9E8 /* WHCollectionFlowLayout.m */; };
 		C899236701E350AA19C1589C /* libPods-BaselineProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE274F7FD8EAA3474FBD12F /* libPods-BaselineProject.a */; };
@@ -89,11 +88,9 @@
 		7B818DA22126C88700107189 /* HMPhotoViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoViewerController.m; sourceTree = "<group>"; };
 		7B818DA32126C88700107189 /* HMPhotoBrowserPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserPhotos.m; sourceTree = "<group>"; };
 		7B818DA42126C88700107189 /* HMPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoProgressView.m; sourceTree = "<group>"; };
-		7B818DA52126C88700107189 /* HMPhotoBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserAnimator.h; sourceTree = "<group>"; };
 		7B818DA62126C88700107189 /* HMPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserController.h; sourceTree = "<group>"; };
 		7B818DA72126C88700107189 /* HMPhotoViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoViewerController.h; sourceTree = "<group>"; };
 		7B818DA82126C88700107189 /* HMPhotoBrowserPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserPhotos.h; sourceTree = "<group>"; };
-		7B818DA92126C88700107189 /* HMPhotoBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserAnimator.m; sourceTree = "<group>"; };
 		7B818DAA2126C88700107189 /* HMPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoProgressView.h; sourceTree = "<group>"; };
 		7B818DB02126CAE000107189 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		7B818DB12126CAE000107189 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
@@ -303,8 +300,6 @@
 				7B818DA32126C88700107189 /* HMPhotoBrowserPhotos.m */,
 				7B818DAA2126C88700107189 /* HMPhotoProgressView.h */,
 				7B818DA42126C88700107189 /* HMPhotoProgressView.m */,
-				7B818DA52126C88700107189 /* HMPhotoBrowserAnimator.h */,
-				7B818DA92126C88700107189 /* HMPhotoBrowserAnimator.m */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -429,7 +424,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B818D842126C0C500107189 /* UIView+init.m in Sources */,
-				7B818DAF2126C88700107189 /* HMPhotoBrowserAnimator.m in Sources */,
 				7B818D692126BA5600107189 /* TabBarController.m in Sources */,
 				7B818D8A2126C1D100107189 /* UIViewController+Extension.m in Sources */,
 				7B929261218945CF0087B9E8 /* WHCollectionFlowLayout.m in Sources */,

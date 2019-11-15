@@ -8,35 +8,28 @@
 
 #import "HMPhotoViewerController.h"
 #import "HMPhotoProgressView.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@interface HMPhotoViewerController () <UIScrollViewDelegate>
+@interface HMPhotoViewerController ()
+
+@property (nonatomic) UIImageView *imageView;
+@property (nonatomic) HMPhotoProgressView *progressView;
+@property (nonatomic) NSURL *url;
 
 @end
 
-@implementation HMPhotoViewerController {
-    UIScrollView *_scrollView;
-    UIImageView *_imageView;
-    HMPhotoProgressView *_progressView;
-    
-    NSURL *_url;
-    NSInteger _photoIndex;
-    UIImage *_placeholder;
-}
+@implementation HMPhotoViewerController
 
 #pragma mark - 构造函数
-+ (instancetype)viewerWithURLString:(NSString *)urlString photoIndex:(NSInteger)photoIndex placeholder:(UIImage *)placeholder {
-    return [[self alloc] initWithURLString:urlString photoIndex:photoIndex placeholder:placeholder];
++ (instancetype)viewerWithURLString:(NSString *)urlString photoIndex:(NSInteger)photoIndex {
+    return [[self alloc] initWithURLString:urlString photoIndex:photoIndex];
 }
 
-- (instancetype)initWithURLString:(NSString *)urlString photoIndex:(NSInteger)photoIndex placeholder:(UIImage *)placeholder {
+- (instancetype)initWithURLString:(NSString *)urlString photoIndex:(NSInteger)photoIndex {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        urlString = [urlString stringByReplacingOccurrencesOfString:@"/bmiddle/" withString:@"/large/"];
         _url = [NSURL URLWithString:urlString];
         _photoIndex = photoIndex;
-        
-        _placeholder = [UIImage imageWithCGImage:placeholder.CGImage scale:1.0 orientation:placeholder.imageOrientation];
     }
     return self;
 }
@@ -48,17 +41,12 @@
     [self loadImage];
 }
 
-#pragma mark - UIScrollViewDelegate
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return _imageView;
-}
-
 #pragma mark - 照片相关
 - (void)loadImage {
     
-    [_imageView sd_setImageWithURL:_url placeholderImage:_placeholder options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+    [_imageView sd_setImageWithURL:_url placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self->_progressView.progress = (float)receivedSize / expectedSize;
+            _progressView.progress = (float)receivedSize / expectedSize;
         });
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (image == nil) {
@@ -72,40 +60,30 @@
     CGSize size = [self imageSizeWithScreen:image];
     
     _imageView.frame = CGRectMake(0, 0, size.width, size.height);
-    _scrollView.contentSize = size;
-    
-    if (size.height < _scrollView.bounds.size.height) {
-        CGFloat offsetY = (_scrollView.bounds.size.height - size.height) * 0.5;
-        
-        _scrollView.contentInset = UIEdgeInsetsMake(offsetY, 0, offsetY, 0);
-    }
+    _imageView.center = self.view.center;
 }
 
 - (CGSize)imageSizeWithScreen:(UIImage *)image {
     CGSize size = [UIScreen mainScreen].bounds.size;
-    size.height = image.size.height * size.width / image.size.width;
+    CGFloat height = image.size.height * size.width / image.size.width;
+    if (height <= size.height) {
+        size.height = height;
+    }
     
     return size;
 }
 
 #pragma mark - 设置界面
 - (void)prepareUI {
-    _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:_scrollView];
-    
-    _imageView = [[UIImageView alloc] initWithImage:_placeholder];
+    _imageView = [[UIImageView alloc] init];
     _imageView.center = self.view.center;
-    [_scrollView addSubview:_imageView];
+    [self.view addSubview:_imageView];
     
     _progressView = [[HMPhotoProgressView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
     _progressView.center = self.view.center;
     [self.view addSubview:_progressView];
     
     _progressView.progress = 1.0;
-    
-    _scrollView.maximumZoomScale = 2.0;
-    _scrollView.minimumZoomScale = 1.0;
-    _scrollView.delegate = self;
 }
 
 @end

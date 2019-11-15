@@ -11,7 +11,7 @@
 @implementation HMPhotoBrowserPhotos
 
 - (NSString *)description {
-    NSArray *keys = @[@"selectedIndex", @"urls", @"parentImageViews"];
+    NSArray *keys = @[@"selectedIndex", @"urls"];
     
     return [self dictionaryWithValuesForKeys:keys].description;
 }

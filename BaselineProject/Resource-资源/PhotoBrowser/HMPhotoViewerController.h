@@ -15,14 +15,10 @@
 ///
 /// @param urlString   urlString 字符串
 /// @param photoIndex  照片索引
-/// @param placeholder 占位图像
 ///
 /// @return 单图查看器
-+ (nonnull instancetype)viewerWithURLString:(NSString * _Nonnull)urlString photoIndex:(NSInteger)photoIndex placeholder:(UIImage * _Nonnull)placeholder;
++ (nonnull instancetype)viewerWithURLString:(NSString * _Nonnull)urlString photoIndex:(NSInteger)photoIndex;
 
 @property (nonatomic) NSInteger photoIndex;
-
-@property (nonatomic, readonly, nonnull) UIScrollView *scrollView;
-@property (nonatomic, readonly, nonnull) UIImageView *imageView;
 
 @end
