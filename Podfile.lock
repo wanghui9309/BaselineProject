@@ -40,7 +40,7 @@ DEPENDENCIES:
   - SDWebImage
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CocoaLumberjack
     - DZNEmptyDataSet
@@ -62,4 +62,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d61a2c10c990061f449bac672688c9389af4ad95
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.3
