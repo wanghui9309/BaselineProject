@@ -13,6 +13,8 @@ target 'BaselineProject' do
   pod 'IQKeyboardManager'
   pod 'CocoaLumberjack'
   pod 'Reachability'
+  pod 'TZImagePickerController'
+  pod 'YYKit'
 
 end
 

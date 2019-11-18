@@ -19,8 +19,6 @@
 		7B818D752126BCBF00107189 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818D742126BCBF00107189 /* UIBarButtonItem+Extension.m */; };
 		7B818D782126BDA400107189 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818D772126BDA400107189 /* UIImage+Extension.m */; };
 		7B818D7B2126BF3600107189 /* UIImageView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818D7A2126BF3600107189 /* UIImageView+Extension.m */; };
-		7B818D7E2126BFB700107189 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818D7D2126BFB700107189 /* UIColor+Extension.m */; };
-		7B818D812126C0A000107189 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818D802126C0A000107189 /* UIView+Frame.m */; };
 		7B818D842126C0C500107189 /* UIView+init.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818D832126C0C500107189 /* UIView+init.m */; };
 		7B818D872126C0F100107189 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818D862126C0F100107189 /* NSString+Extension.m */; };
 		7B818D8A2126C1D100107189 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818D892126C1D100107189 /* UIViewController+Extension.m */; };
@@ -63,10 +61,6 @@
 		7B818D772126BDA400107189 /* UIImage+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		7B818D792126BF3600107189 /* UIImageView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Extension.h"; sourceTree = "<group>"; };
 		7B818D7A2126BF3600107189 /* UIImageView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Extension.m"; sourceTree = "<group>"; };
-		7B818D7C2126BFB700107189 /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
-		7B818D7D2126BFB700107189 /* UIColor+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
-		7B818D7F2126C0A000107189 /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		7B818D802126C0A000107189 /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		7B818D822126C0C500107189 /* UIView+init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+init.h"; sourceTree = "<group>"; };
 		7B818D832126C0C500107189 /* UIView+init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+init.m"; sourceTree = "<group>"; };
 		7B818D852126C0F100107189 /* NSString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
@@ -150,7 +144,7 @@
 		7B818D382126AFC600107189 /* BaselineProject */ = {
 			isa = PBXGroup;
 			children = (
-				7B818D6D2126BACC00107189 /* Home */,
+				7BF8AA7023825BDD008994FE /* Modules */,
 				7B818D992126C70500107189 /* Tool */,
 				7B818D602126B2B300107189 /* Other-其他 */,
 				7B818D9F2126C88700107189 /* Resource-资源 */,
@@ -181,8 +175,6 @@
 				7B818D952126C63F00107189 /* CustomTextView */,
 				7B818D912126C5C000107189 /* NetworkActivityIndicator-网络转圈状态 */,
 				7B818D612126B2B300107189 /* Category */,
-				7B818D652126BA3300107189 /* Nav */,
-				7B818D662126BA3300107189 /* Tabbar */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -200,10 +192,6 @@
 				7B818D772126BDA400107189 /* UIImage+Extension.m */,
 				7B818D792126BF3600107189 /* UIImageView+Extension.h */,
 				7B818D7A2126BF3600107189 /* UIImageView+Extension.m */,
-				7B818D7C2126BFB700107189 /* UIColor+Extension.h */,
-				7B818D7D2126BFB700107189 /* UIColor+Extension.m */,
-				7B818D7F2126C0A000107189 /* UIView+Frame.h */,
-				7B818D802126C0A000107189 /* UIView+Frame.m */,
 				7B818D822126C0C500107189 /* UIView+init.h */,
 				7B818D832126C0C500107189 /* UIView+init.m */,
 				7B818D852126C0F100107189 /* NSString+Extension.h */,
@@ -311,6 +299,16 @@
 				7B929260218945CF0087B9E8 /* WHCollectionFlowLayout.m */,
 			);
 			path = "CollectionFlowLayout-拖拽";
+			sourceTree = "<group>";
+		};
+		7BF8AA7023825BDD008994FE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7B818D6D2126BACC00107189 /* Home */,
+				7B818D652126BA3300107189 /* Nav */,
+				7B818D662126BA3300107189 /* Tabbar */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,12 +438,10 @@
 				7B818D5D2126B13E00107189 /* AppDelegate.m in Sources */,
 				7B818D712126BAE000107189 /* HomeViewController.m in Sources */,
 				7B818DB22126CAE000107189 /* NSDate+Extension.m in Sources */,
-				7B818D7E2126BFB700107189 /* UIColor+Extension.m in Sources */,
 				7B818D7B2126BF3600107189 /* UIImageView+Extension.m in Sources */,
 				7B818DAB2126C88700107189 /* HMPhotoBrowserController.m in Sources */,
 				7B818D942126C5C000107189 /* WHNetworkActivityIndicator.m in Sources */,
 				7B818D782126BDA400107189 /* UIImage+Extension.m in Sources */,
-				7B818D812126C0A000107189 /* UIView+Frame.m in Sources */,
 				7B818DAE2126C88700107189 /* HMPhotoProgressView.m in Sources */,
 				7B818DAD2126C88700107189 /* HMPhotoBrowserPhotos.m in Sources */,
 			);
@@ -583,7 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "BaselineProject/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BaselineProject/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,7 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "BaselineProject/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BaselineProject/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -28,6 +28,10 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - TZImagePickerController (3.2.7)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking
@@ -38,6 +42,8 @@ DEPENDENCIES:
   - MJRefresh
   - Reachability
   - SDWebImage
+  - TZImagePickerController
+  - YYKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -49,6 +55,9 @@ SPEC REPOS:
     - MJRefresh
     - Reachability
     - SDWebImage
+  trunk:
+    - TZImagePickerController
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -59,7 +68,9 @@ SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  TZImagePickerController: 821b81f83594a736e831a018f2a2ce31822ddf0b
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: d61a2c10c990061f449bac672688c9389af4ad95
+PODFILE CHECKSUM: e81fc2e99e11dde596c8dad6551576edc068f406
 
 COCOAPODS: 1.8.3

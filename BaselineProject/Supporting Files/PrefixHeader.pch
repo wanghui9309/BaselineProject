@@ -10,13 +10,12 @@
 #define PrefixHeader_pch
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
-#import "UIView+Frame.h"
 #import "UIView+init.h"
-#import "UIColor+Extension.h"
 #import "UIViewController+Extension.h"
 #import "UIImage+Extension.h"
 #import "NSAttributedString+Extension.h"
 #import "ShareInstance.h"
+#import <YYKit/YYKit.h>
 
 
 // 屏幕的宽度

@@ -20,8 +20,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //状态栏样式
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     // 初始化SDK
     [UIWindow initSDK];
     // 1、创建窗口
@@ -31,12 +29,6 @@
     // 2、设置根控制器
     [UIWindow switchRootViewController];
     
-    return YES;
-}
-
-// 此方法在某一时刻才生效（4.2 < iOS Version < 9.0）
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation
-{
     return YES;
 }
 
