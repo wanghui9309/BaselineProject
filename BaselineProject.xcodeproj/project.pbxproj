@@ -33,6 +33,8 @@
 		7B818DAE2126C88700107189 /* HMPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818DA42126C88700107189 /* HMPhotoProgressView.m */; };
 		7B818DB22126CAE000107189 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B818DB12126CAE000107189 /* NSDate+Extension.m */; };
 		7B929261218945CF0087B9E8 /* WHCollectionFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B929260218945CF0087B9E8 /* WHCollectionFlowLayout.m */; };
+		7BF8AAA62382BB53008994FE /* WHWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF8AAA32382BB53008994FE /* WHWebViewController.xib */; };
+		7BF8AAA72382BB53008994FE /* WHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8AAA42382BB53008994FE /* WHWebViewController.m */; };
 		C899236701E350AA19C1589C /* libPods-BaselineProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE274F7FD8EAA3474FBD12F /* libPods-BaselineProject.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,9 @@
 		7B818DB12126CAE000107189 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		7B92925F218945CF0087B9E8 /* WHCollectionFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHCollectionFlowLayout.h; sourceTree = "<group>"; };
 		7B929260218945CF0087B9E8 /* WHCollectionFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHCollectionFlowLayout.m; sourceTree = "<group>"; };
+		7BF8AAA32382BB53008994FE /* WHWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHWebViewController.xib; sourceTree = "<group>"; };
+		7BF8AAA42382BB53008994FE /* WHWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHWebViewController.m; sourceTree = "<group>"; };
+		7BF8AAA52382BB53008994FE /* WHWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHWebViewController.h; sourceTree = "<group>"; };
 		B9D77E7D498016BA1685DEE4 /* Pods-BaselineProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaselineProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaselineProject/Pods-BaselineProject.release.xcconfig"; sourceTree = "<group>"; };
 		CCE274F7FD8EAA3474FBD12F /* libPods-BaselineProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaselineProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -305,10 +310,21 @@
 			isa = PBXGroup;
 			children = (
 				7B818D6D2126BACC00107189 /* Home */,
+				7BF8AAA22382BB53008994FE /* WebView */,
 				7B818D652126BA3300107189 /* Nav */,
 				7B818D662126BA3300107189 /* Tabbar */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		7BF8AAA22382BB53008994FE /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7BF8AAA32382BB53008994FE /* WHWebViewController.xib */,
+				7BF8AAA42382BB53008994FE /* WHWebViewController.m */,
+				7BF8AAA52382BB53008994FE /* WHWebViewController.h */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF8AAA62382BB53008994FE /* WHWebViewController.xib in Resources */,
 				7B818D592126B13E00107189 /* Assets.xcassets in Resources */,
 				7B818D5B2126B13E00107189 /* LaunchScreen.storyboard in Resources */,
 				7B818D722126BAE000107189 /* HomeViewController.xib in Resources */,
@@ -441,6 +458,7 @@
 				7B818D7B2126BF3600107189 /* UIImageView+Extension.m in Sources */,
 				7B818DAB2126C88700107189 /* HMPhotoBrowserController.m in Sources */,
 				7B818D942126C5C000107189 /* WHNetworkActivityIndicator.m in Sources */,
+				7BF8AAA72382BB53008994FE /* WHWebViewController.m in Sources */,
 				7B818D782126BDA400107189 /* UIImage+Extension.m in Sources */,
 				7B818DAE2126C88700107189 /* HMPhotoProgressView.m in Sources */,
 				7B818DAD2126C88700107189 /* HMPhotoBrowserPhotos.m in Sources */,
