@@ -57,4 +57,24 @@
     [self.layer addSublayer:gradientLayer];
 }
 
+/**
+ *  生成带边框的视图
+ *
+ *  @param borderW 边框宽度
+ *  @param color   边框颜色
+ */
+- (void)drawCircleWithBorderW:(CGFloat)borderW color:(UIColor *)color
+{
+    CGSize size = CGSizeMake(self.size.width + 2 * borderW, self.size.height + 2 * borderW);
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = path.CGPath;
+    maskLayer.lineWidth = borderW;
+    maskLayer.strokeColor = color.CGColor;
+    maskLayer.fillColor = [UIColor clearColor].CGColor;
+    [self.layer addSublayer:maskLayer];
+}
+
 @end

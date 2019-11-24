@@ -34,4 +34,12 @@
  */
 - (void)verticalGradientFromWithColor:(UIColor *)startColor toColor:(UIColor *)endColor;
 
+/**
+ *  生成带边框的视图
+ *
+ *  @param borderW 边框宽度
+ *  @param color   边框颜色
+ */
+- (void)drawCircleWithBorderW:(CGFloat)borderW color:(UIColor *)color;
+
 @end
