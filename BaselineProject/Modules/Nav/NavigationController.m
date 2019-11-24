@@ -33,7 +33,7 @@
     [navBar setBackgroundImage:[UIImage imageWithColor:UIColor.whiteColor] forBarMetrics:UIBarMetricsDefault];
     
     //移除NavBar黑线
-//    navBar.shadowImage = [[UIImage alloc] init];
+//    navBar.clipsToBounds = YES;
     NSDictionary *textAttr = @{NSForegroundColorAttributeName : [UIColor blackColor]};
     [navBar setTitleTextAttributes:textAttr];
 }
