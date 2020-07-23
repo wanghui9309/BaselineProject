@@ -320,9 +320,9 @@
 		7BF8AAA22382BB53008994FE /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				7BF8AAA32382BB53008994FE /* WHWebViewController.xib */,
-				7BF8AAA42382BB53008994FE /* WHWebViewController.m */,
 				7BF8AAA52382BB53008994FE /* WHWebViewController.h */,
+				7BF8AAA42382BB53008994FE /* WHWebViewController.m */,
+				7BF8AAA32382BB53008994FE /* WHWebViewController.xib */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
